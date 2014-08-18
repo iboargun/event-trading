@@ -1,0 +1,19 @@
+extends ../layout
+block content
+    div.container#content
+
+        h3=title
+
+        table.table.table-striped
+            tr
+                th #
+                th Username
+                th E-Mail
+                th Actions
+            each user, i in users
+                tr
+                    td #{i}
+                    td #{user.username}
+                    td #{user.email}
+                    td
+                        a(href='/users/delete/#{user._id}', data-method="deleteUser") Delete

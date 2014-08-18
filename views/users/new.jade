@@ -1,0 +1,15 @@
+extends ../layout
+block content
+    div.container#content
+        h3=title
+
+        form#formAddUser(role="form", name="add", method="post", action="/users/add")
+            div.form-group
+                label(for="inputUserName") Username:
+                input.form-control#inputUserName(type="text", placeholder="Benutzername", name="username")
+
+            div.form-group
+                label(for="inputUserEmail") E-Mail Adresse:
+                input.form-control#inputUserEmail(type="email", placeholder="E-Mail", name="email")
+
+            button#btnSubmit.btn.btn-primary(type="submit") Speichern

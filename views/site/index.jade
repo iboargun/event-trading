@@ -1,0 +1,62 @@
+extends ../layout
+
+block append header
+    div#myCarousel.carousel.slide(data-ride="carousel")
+        ol.carousel-indicators
+            li.active(data-target="#myCarousel", data-slide-to="0")
+            li(data-target="#myCarousel", data-slide-to="1")
+
+        div.carousel-inner
+            div.item.active
+                img(src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", alt="First slide")
+                div.container
+                    div.carousel-caption
+                        h1 Event-Trading
+                        p
+                            | Tradingansätze gibt es viele - alleine der Erfolg gibt einem Konzept Recht.<br />
+                            | Andreas Haase ist Event-Trader und Inspiration dieser App!
+                        p
+                            a.btn.btn-lg.btn-primary(href="#", role="button") Gleich loslegen
+
+            div.item
+                img(src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", alt="Second slide")
+                div.container
+                    div.carousel-caption
+                        h1 Another example headline.
+                        p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        p
+                            a.btn.btn-lg.btn-primary(href="#", role="button") Learn more
+
+        a.left.carousel-control(href="#myCarousel", role="button", data-slide="prev")
+            span.glyphicon.glyphicon-chevron-left
+        a.right.carousel-control(href="#myCarousel", role="button", data-slide="next")
+            span.glyphicon.glyphicon-chevron-right
+
+block content
+
+    div.container.marketing
+
+        div.row
+            div.col-lg-4
+                img.img-circle(src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", alt="Generic placeholder image", style="width: 140px; height: 140px;")
+                h2 Heading
+                p
+                   | Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                p
+                    a.btn.btn-default(href="#", role="button") View details &raquo;
+
+            div.col-lg-4
+                img.img-circle(src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", alt="Generic placeholder image", style="width: 140px; height: 140px;")
+                h2 Heading
+                p
+                    | Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                p
+                    a.btn.btn-default(href="#", role="button") View details &raquo;
+
+            div.col-lg-4
+                img.img-circle(src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", alt="Generic placeholder image", style="width: 140px; height: 140px;")
+                h2 Heading
+                p
+                    | Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                p
+                    a.btn.btn-default(href="#", role="button") View details &raquo;

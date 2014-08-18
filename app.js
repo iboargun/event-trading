@@ -5,9 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('localhost:27017/event-trading-app');
+
+var site = require('./routes/site');
 var users = require('./routes/users');
-var about = require('./routes/about');
+var termine = require('./routes/termine');
 
 var app = express();
 
@@ -23,9 +27,24 @@ app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+// Database
+var mongo = require('mongoskin');
+var db = mongo.db("mongodb://localhost:27017/event-trading-app", {native_parser:true});
+
+// Make our db accessible to our router
+app.use(function(req,res,next){
+    req.db = db;
+    next();
+});
+
+// General Routes
+app.use('/', site);
+
+// User
 app.use('/users', users);
-app.use('/about', about);
+
+// Termine
+app.use('/termine', termine);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -41,7 +60,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
+        res.render('site/error', {
             message: err.message,
             error: err
         });
@@ -52,7 +71,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+    res.render('site/error', {
         message: err.message,
         error: {}
     });
