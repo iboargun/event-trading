@@ -1,0 +1,76 @@
+doctype html
+html
+    head
+        title= title
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+
+        block header
+            div.navbar-wrapper
+                div.container
+                    div.navbar.navbar-inverse.navbar-static-top(role='navigation')
+                        div.container
+                            div.navbar-header
+                                button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+                                    span.sr-only Toggle navigation
+                                    span.icon-bar
+                                    span.icon-bar
+                                    span.icon-bar
+                                a.navbar-brand(href="/")=title
+
+                            div.navbar-collapse.collapse
+
+                            ul.nav.navbar-nav
+                                li.active
+                                    a(href="/") Home
+                                li
+                                    a(href="/about") About
+
+            div#myCarousel.carousel.slide(data-ride="carousel")
+                ol.carousel-indicators
+                    li.active(data-target="#myCarousel", data-slide-to="0")
+                    li(data-target="#myCarousel", data-slide-to="1")
+                    li(data-target="#myCarousel",data-slide-to="2")
+
+                div.carousel-inner
+                    div.item.active
+                        img(src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", alt="First slide")
+                        div.container
+                            div.carousel-caption
+                                h1 Example headline.
+                                p
+                                    | Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.
+                                p
+                                    a.btn.btn-lg.btn-primary(href="#", role="button") Sign up today
+
+                a.left.carousel-control(href="#myCarousel", role="button", data-slide="prev")
+                    span.glyphicon.glyphicon-chevron-left
+                a.right.carousel-control(href="#myCarousel", role="button", data-slide="next")
+                    span.glyphicon.glyphicon-chevron-right
+
+        block content
+
+        block footer
+            footer
+                section.css-table
+                    section.four-column
+                        section.cell
+                            p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
+                        section.cell
+                            p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
+                        section.cell
+                            p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
+                        section.cell
+                            p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
+
+
+        block scripts
+            script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+            script(type='text/javascript', src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+
+
